@@ -2,45 +2,45 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // или 'production' для билда
-  entry: './src/index.jsx', // главный JS-файл
+  mode: 'development',
+  entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    clean: true, // очищает dist при сборке
+    clean: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx'], // для React JSX
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader', // транспилируем JSX и современный JS
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'], // импорт CSS в JS
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i, // картинки
+        test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource',
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // берём HTML из src/
+      template: './src/index.html',
       filename: 'index.html',
     }),
   ],
   devServer: {
-    static: path.join(__dirname, 'dist'), // где искать index.html
+    static: path.join(__dirname, 'dist'),
     compress: true,
     port: 3000,
     hot: true,
-    open: true, // открывает браузер автоматически
-    historyApiFallback: true, // для React Router
+    open: true,
+    historyApiFallback: true,
   },
 };

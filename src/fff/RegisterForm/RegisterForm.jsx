@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { register } from '../../store/authSlice';
+import { useDispatch } from 'react-redux';
 
 const RegisterForm = () => {
   const [username, setUsername] = useState('');
@@ -6,9 +8,40 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!username || !email || !password || !confirmPassword || !confirmPassword) {
+      setError('Please fill in all fields');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    const newUser = { username, email, password };
+    console.log('Submitting new user:', newUser);
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser && storedUser.username === username) {
+      setError('User already exists');
+      return;
+    }
+
+    dispatch(register(newUser));
+    setUsername('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+    setError('');
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username:</label>
         <input
