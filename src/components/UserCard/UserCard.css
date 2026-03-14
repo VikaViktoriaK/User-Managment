@@ -1,0 +1,48 @@
+.user-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 400px;
+    margin: 10px auto;
+}
+
+.user-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.user-job,
+.user-city {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.user-card-button {
+    background-color: #f25a5a;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.user-card-button:hover {
+    background-color: #e86666;
+}
