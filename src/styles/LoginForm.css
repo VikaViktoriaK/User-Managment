@@ -1,0 +1,164 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #eaeaea;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-header {
+  background-color: #f25a5a;
+  color: #ffffff;
+  width: 350px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.welcome-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+
+.welcome-header p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.welcome-icon {
+    width: 100px;
+}
+
+.login-page {
+  width: 350px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.login-header {
+  text-align: center;
+  font-size: 24px;
+  color: #f25a5a;
+  margin-bottom: 20px;
+}
+
+.login-header .icon {
+  font-size: 50px;
+  color: #f25a5a;
+}
+
+.login-page h2 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus {
+  border-color: #f25a5a;
+  outline: none;
+}
+
+.error-message {
+  color: #f25a5a;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  background-color: #f25a5a;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 15px 0;
+}
+
+button[type='submit']:hover {
+  background-color: #e14a4a;
+}
+
+.forgot-password {
+  text-align: center;
+  font-size: 14px;
+  color: #f25a5a;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+button {
+  width: 100%;
+  background-color: #f25a5a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  margin-top: 15px;
+}
+
+.switch-form-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 15px;
+
+    color: #f25a5a;
+    font-size: 14px;
+    cursor: pointer;
+
+    text-decoration: underline;
+}
+
+.switch-form-btn:hover {
+    opacity: 0.8;
+}
+
+.error-input {
+    border: 1px solid #f25a5a;
+    background-color: #fff5f5;
+}
+
+.error-message {
+    color: #f25a5a;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: #4caf50;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
