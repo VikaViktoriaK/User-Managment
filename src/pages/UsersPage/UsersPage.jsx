@@ -3,6 +3,7 @@ import UserCard from '../../components/UserCard/UserCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../../store/usersSlice';
 import './UsersPage.css';
+import Menu from '../../components/Menu/Menu';
 
 const UsersPage = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const UsersPage = () => {
 
   return (
     <>
+      <Menu />
       <div className="user-list">
         {users.map((user) => (
           <UserCard key={user.id} user={user} />

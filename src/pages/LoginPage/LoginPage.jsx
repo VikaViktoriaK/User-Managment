@@ -40,7 +40,7 @@ const LoginPage = () => {
 
         {isLogin ? <LoginForm /> : <RegisterForm />}
 
-        <button className="switch-form-btn" onClick={toggleForm}>
+        <button className="switch-form-btn login-button" onClick={toggleForm}>
           {isLogin ? "Don't have an account? Register" : 'Already have an account? Login'}
         </button>
       </div>
