@@ -1,4 +1,18 @@
+.filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .user-list {
     display: flex;
     flex-wrap: wrap;
+}
+
+.no-users {
+    font-size: 20px;
+    color: #f25a5a;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
 }
