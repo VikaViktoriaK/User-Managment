@@ -1,0 +1,48 @@
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 350px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+.filter-container label {
+    font-size: 1.1em;
+    margin-right: 10px;
+    color: #333;
+}
+
+.filter-container select {
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #555;
+    transition: border 0.3s ease;
+    width: 150px;
+}
+
+.filter-container select:focus {
+    border-color: #f25a5a;
+    outline: none;
+}
+
+.filter-container button {
+    padding: 8px 16px;
+    background-color: #f25a5a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.filter-container select option {
+    padding: 10px;
+    background-color: white;
+    color: #333;
+}
