@@ -75,14 +75,6 @@ const UsersPage = () => {
     }
   }, [status, dispatch]);
 
-  if (status === 'loading') {
-    return <Loader />;
-  }
-
-  if (status === 'failed') {
-    return <div>Error: {error}</div>;
-  }
-
   return (
     <>
       <Menu />
@@ -93,7 +85,11 @@ const UsersPage = () => {
           <Filter options={genders} label="Gender" onChange={handleGenderChange} />
         </div>
         <div className="user-list">
-          {filteredUsers.length === 0 ? (
+          {status === 'loading' ? (
+            <Loader />
+          ) : status === 'failed' ? (
+            <div>Error: {error}</div>
+          ) : filteredUsers.length === 0 ? (
             <p className="no-users">No users found</p>
           ) : (
             currentUsers.map((user) => <UserCard key={user.id} user={user} />)
