@@ -1,5 +1,5 @@
 .pagination {
-    margin-top: 20px;
+    margin: 20px;
     display: flex;
     gap: 10px;
     justify-content: end;
@@ -23,3 +23,8 @@
 .pagination button:hover {
     background-color: #fff0f0;
 }
+
+@media (max-width: 480px) {
+.pagination {
+    justify-content: center;
+} }

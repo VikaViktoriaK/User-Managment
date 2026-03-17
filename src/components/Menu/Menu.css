@@ -47,3 +47,13 @@
 .logout-btn:hover {
     background-color: rgb(255, 243, 243);
 }
+
+@media (max-width: 450px) {
+    .menu {
+        display: block;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+}

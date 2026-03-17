@@ -4,7 +4,6 @@
     justify-content: space-between;
     max-width: 350px;
     padding: 10px 20px;
-    margin: 10px 0;
 }
 
 .filter-container label {
@@ -15,7 +14,7 @@
 
 .filter-container select {
     padding: 10px 15px;
-    font-size: 1em;
+    font-size: 15px;
     border-radius: 6px;
     border: 1px solid #ddd;
     background-color: #fff;
@@ -32,7 +31,7 @@
 .filter-container button {
     padding: 8px 16px;
     background-color: #f25a5a;
-    color: white;
+    color: #ffffff;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -43,6 +42,34 @@
 
 .filter-container select option {
     padding: 10px;
-    background-color: white;
+    background-color: #ffffff;
     color: #333;
 }
+
+.filter-container input,
+.filter-container select,
+.filter-container button {
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .filter-label {
+        display: block;
+        margin: 3px;
+    }
+
+    .filter-container select {
+        display: block;
+        padding: 8px 15px;
+    }
+
+        .filter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0 auto;
+            padding: 0;
+        }
+}
+
+

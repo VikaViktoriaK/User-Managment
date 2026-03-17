@@ -61,7 +61,7 @@ const UsersPage = () => {
 
       setFilteredUsers(filtered);
     } else {
-      setFilteredUsers([]); // на случай, если нет пользователей
+      setFilteredUsers([]);
     }
   }, [users, selectedDepartment, selectedGender, search]);
 
@@ -79,10 +79,12 @@ const UsersPage = () => {
     <>
       <Menu />
       <Container>
-        <div className="filters">
+        <div className="filters-block">
           <Search search={search} setSearch={setSearch} />
-          <Filter options={departments} label="Department" onChange={handleDepartmentChange} />
-          <Filter options={genders} label="Gender" onChange={handleGenderChange} />
+          <div className="filters">
+            <Filter options={departments} label="Department" onChange={handleDepartmentChange} />
+            <Filter options={genders} label="Gender" onChange={handleGenderChange} />
+          </div>
         </div>
         <div className="user-list">
           {status === 'loading' ? (

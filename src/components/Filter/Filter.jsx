@@ -4,7 +4,7 @@ import './Filter.css';
 const Filter = ({ options, label, onChange }) => {
   return (
     <div className="filter-container">
-      <p>{label}:</p>
+      <p className="filter-label">{label}:</p>
       <select onChange={(e) => onChange(e.target.value)}>
         <option value="">All</option>
         {options.map((option) => (

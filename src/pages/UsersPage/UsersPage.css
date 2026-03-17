@@ -1,24 +1,33 @@
+.filters-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .filters {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
 }
 
 .user-list {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .no-users {
-    font-size: 20px;
-    color: #f25a5a;
-    font-weight: bold;
-    display: block;
-    margin: 0 auto;
+  font-size: 20px;
+  color: #f25a5a;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 480px) {
-    .no-users {
-        display: block;
-    }
+  .filters-block {
+    display: block;
+  }
+
+  .user-list {
+    display: block;
+    justify-content: center;
+  }
 }
