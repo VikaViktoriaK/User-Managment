@@ -1,7 +1,10 @@
 import React from 'react';
 import './UserCard.css';
+import { useNavigate } from 'react-router-dom';
 
 const UserCard = ({ user }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="user-card">
       <img src={user.image} alt={user.firstName} className="user-img" />
@@ -11,7 +14,9 @@ const UserCard = ({ user }) => {
         </h3>
         <p className="user-job">{user.company ? user.company.title : 'No job info'}</p>
         <p className="user-city">{user.address ? user.address.city : 'No city info'}</p>
-        <button className="user-card-button">View Details</button>
+        <button className="user-card-button" onClick={() => navigate(`/users/${user.id}`)}>
+          View Details
+        </button>
       </div>
     </div>
   );

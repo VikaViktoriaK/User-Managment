@@ -40,30 +40,30 @@ const UsersPage = () => {
   };
 
   useEffect(() => {
-    if (!users || users.length === 0) return;
+    if (users && users.length > 0) {
+      let filtered = [...users];
 
-    let filtered = [...users];
+      if (selectedDepartment) {
+        filtered = filtered.filter((user) => user.company?.department === selectedDepartment);
+      }
 
-    if (selectedDepartment) {
-      filtered = filtered.filter(
-        (user) => user.company && user.company.department === selectedDepartment,
-      );
+      if (selectedGender) {
+        filtered = filtered.filter(
+          (user) => user.gender.toLowerCase() === selectedGender.toLowerCase(),
+        );
+      }
+
+      if (search) {
+        filtered = filtered.filter((user) =>
+          `${user.firstName} ${user.lastName}`.toLowerCase().includes(search.toLowerCase()),
+        );
+      }
+
+      setFilteredUsers(filtered);
+    } else {
+      setFilteredUsers([]); // на случай, если нет пользователей
     }
-
-    if (selectedGender) {
-      filtered = filtered.filter(
-        (user) => user.gender.toLowerCase() === selectedGender.toLowerCase(),
-      );
-    }
-
-    if (search) {
-      filtered = filtered.filter((user) =>
-        `${user.firstName} ${user.lastName}`.toLowerCase().includes(search.toLowerCase()),
-      );
-    }
-
-    setFilteredUsers(filtered);
-  }, [selectedDepartment, selectedGender, users, search]);
+  }, [users, selectedDepartment, selectedGender, search]);
 
   useEffect(() => {
     setCurrentPage(1);

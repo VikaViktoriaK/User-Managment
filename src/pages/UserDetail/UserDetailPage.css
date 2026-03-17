@@ -1,0 +1,76 @@
+.user-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.back-button {
+    background-color: #ffffff;
+    color: #f25a5a;
+    padding: 8px 0;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    width: 110px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.user-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.user-name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #f25a5a;
+}
+
+.user-info p,
+.company-info p,
+.bank-info p {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+.label {
+    font-weight: 600;
+    color: #555;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 4px;
+}
+
+.company-info,
+.bank-info {
+    background-color: #fff0f0;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.status-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.status-message.error {
+    color: red;
+}
