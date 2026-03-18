@@ -27,10 +27,6 @@ const authSlice = createSlice({
         console.log('Error: Invalid username or password');
       }
     },
-    logout: (state) => {
-      state.currentUser = null;
-      localStorage.removeItem('currentUser');
-    },
   },
 });
 
