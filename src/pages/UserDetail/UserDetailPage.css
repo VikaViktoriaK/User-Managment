@@ -23,11 +23,9 @@
 }
 
 .user-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    margin-bottom: 20px;
 }
 
 .user-name {
@@ -52,7 +50,7 @@
 .section-title {
     font-size: 20px;
     font-weight: 600;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 10px;
     border-bottom: 2px solid #eee;
     padding-bottom: 4px;
@@ -73,4 +71,30 @@
 
 .status-message.error {
     color: red;
+}
+
+@media (max-width: 480px) {
+    .user-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .user-name {
+        margin: 10px 0;
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .user-info p, .company-info p, .bank-info p {
+        font-size: 14px;
+    }
+
+    .user-detail {
+        margin: 20px auto
+    }
+
 }

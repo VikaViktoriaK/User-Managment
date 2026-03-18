@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../store/authSlice';
+import '../../styles/LoginForm.css';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
