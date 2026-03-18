@@ -7,7 +7,7 @@
 }
 
 .filter-container label {
-    font-size: 1.1em;
+    font-size: 20px;
     margin-right: 10px;
     color: #333;
 }
@@ -55,7 +55,7 @@
 @media (max-width: 480px) {
     .filter-label {
         display: block;
-        margin: 3px;
+        margin: 0;
     }
 
     .filter-container select {
@@ -63,13 +63,16 @@
         padding: 8px 15px;
     }
 
-        .filter-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 0 auto;
-            padding: 0;
-        }
+    .filter-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0;
+    }
+
+    .filters {
+        gap: 10px;
+    }
 }
 
 

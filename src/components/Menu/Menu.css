@@ -48,12 +48,16 @@
     background-color: rgb(255, 243, 243);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .menu {
         display: block;
     }
 
     .logo {
         justify-content: center;
+    }
+
+    .logout-btn {
+        width: 30%;
     }
 }
