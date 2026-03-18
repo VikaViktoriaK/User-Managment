@@ -4,6 +4,7 @@
     justify-content: space-between;
     max-width: 350px;
     padding: 10px 20px;
+    gap: 5px;
 }
 
 .filter-container label {

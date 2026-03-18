@@ -10,17 +10,17 @@ const UserDetailPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { selectedUser, status, error } = useSelector((state) => state.users);
+  const { selectedUser, selectedStatus, error } = useSelector((state) => state.users);
 
   useEffect(() => {
     dispatch(fetchUserById(id));
   }, [dispatch, id]);
 
-  if (status === 'loading') {
+  if (selectedStatus === 'loading') {
     return <Loader />;
   }
 
-  if (status === 'failed') {
+  if (selectedStatus === 'failed') {
     return <p className="status-message error">Error loading user</p>;
   }
 

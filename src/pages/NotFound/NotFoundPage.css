@@ -32,6 +32,7 @@
     color: #f25a5a;
     cursor: pointer;
     transition: all 0.25s ease;
+    width: 50%;
 }
 
 .notfound-button:hover {
