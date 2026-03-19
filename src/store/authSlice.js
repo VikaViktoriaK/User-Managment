@@ -1,9 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  currentUser: JSON.parse(localStorage.getItem('currentUser')) || null,
+const getSaveLocalStorage = (key) => {
+  try {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : null;
+  } catch (error) {
+    console.error(key, error);
+    localStorage.removeItem(key);
+    return null;
+  }
 };
 
+const initialState = {
+  currentUser: getSaveLocalStorage('currentUser'),
+};
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -18,7 +28,7 @@ const authSlice = createSlice({
     login: (state, action) => {
       const { username, password } = action.payload;
 
-      const storedUser = JSON.parse(localStorage.getItem('user'));
+      const storedUser = getSaveLocalStorage('user');
 
       if (storedUser && storedUser.username === username && storedUser.password === password) {
         state.currentUser = storedUser;
