@@ -45,7 +45,6 @@ const UsersPage = () => {
     setCurrentPage(1);
   }, [selectedDepartment, selectedGender, search]);
 
-  // Расчет пагинации
   const indexOfLastUser = currentPage * usersCards;
   const indexOfFirstUser = indexOfLastUser - usersCards;
   const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);

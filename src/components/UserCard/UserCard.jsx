@@ -1,13 +1,13 @@
 import React from 'react';
 import './UserCard.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const UserCard = ({ user }) => {
   const navigate = useNavigate();
 
   const firstName = user?.firstName ?? 'No name';
   const lastName = user?.lastName ?? '';
-  const image = user?.image ?? 'https://via.placeholder.com/150';
+  const image = user?.image ?? 'No photo';
   const job = user?.company?.title ?? 'No job info';
   const city = user?.address?.city ?? 'No city info';
   const id = user?.id;
@@ -21,9 +21,13 @@ const UserCard = ({ user }) => {
         </h3>
         <p className="user-job">{job}</p>
         <p className="user-city">{city}</p>
-        <button className="user-card-button" onClick={() => id && navigate(`/users/${id}`)}>
+        <Link
+          to={`/users/${id}`}
+          className="user-card-button"
+          style={{ textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}
+        >
           View Details
-        </button>
+        </Link>
       </div>
     </div>
   );

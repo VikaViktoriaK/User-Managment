@@ -1,12 +1,11 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useGetUserByIdQuery } from '../../services/usersApi';
 import './UserDetailPage.css';
 import Loader from '../../components/Loader/Loader';
 
 const UserDetailPage = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const { data: user, isLoading, isError } = useGetUserByIdQuery(id);
 
@@ -37,9 +36,9 @@ const UserDetailPage = () => {
     <div className="user-detail">
       <div className="card">
         <div>
-          <button className="back-button" onClick={() => navigate('/users')}>
+          <Link replace to="/users" className="back-button">
             &lt; Back to Users
-          </button>
+          </Link>
         </div>
 
         <img className="user-image" src={image} alt={fullName} />

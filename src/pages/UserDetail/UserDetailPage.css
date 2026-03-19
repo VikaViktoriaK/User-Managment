@@ -13,6 +13,7 @@
     cursor: pointer;
     font-size: 15px;
     width: 110px;
+    text-decoration: none;
 }
 
 .card {
@@ -26,6 +27,7 @@
     width: 150px;
     height: 150px;
     object-fit: cover;
+    margin-top: 20px;
 }
 
 .user-name {
@@ -77,6 +79,7 @@
     .user-image {
         width: 120px;
         height: 120px;
+        margin-top: 10px;
     }
 
     .user-name {
