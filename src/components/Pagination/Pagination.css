@@ -1,30 +1,47 @@
+:root {
+    --primary-color: #f25a5a;
+    --primary-hover: #fff0f0;
+    --primary-active: #ffe3e3;
+    --bg-button: #ffffff;
+    --border-width: 3px;
+    --spacing-md: 20px;
+    --spacing-sm: 10px;
+    --btn-size: 30px;
+    --font-size-btn: 15px;
+}
+
 .pagination {
-    margin: 20px;
+    margin: var(--spacing-md);
+    margin-left: auto;
     display: flex;
-    gap: 10px;
-    justify-content: end;
+    gap: var(--spacing-sm);
+    justify-content: flex-end;
+    width: fit-content;
 }
 
 .pagination button {
-    width: 30px;
-    font-size: 15px;
-    padding: 5px 10px;
+    min-width: var(--btn-size);
+    height: var(--btn-size);
+    font-size: var(--font-size-btn);
+    padding: 5px;
     cursor: pointer;
-    border: 3px solid #f25a5a;
-    background-color: #ffffff;
-    color: #f25a5a;
-
+    border: var(--border-width) solid var(--primary-color);
+    background-color: var(--bg-button);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
 }
 
 .pagination .active {
-    background-color: #ffe3e3;
+    background-color: var(--primary-active);
 }
 
 .pagination button:hover {
-    background-color: #fff0f0;
+    background-color: var(--primary-hover);
 }
 
 @media (max-width: 480px) {
-.pagination {
-    justify-content: center;
-} }
+
+}

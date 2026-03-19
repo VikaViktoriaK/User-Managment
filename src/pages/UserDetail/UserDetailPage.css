@@ -1,3 +1,18 @@
+:root {
+    --primary-color: #f25a5a;
+    --primary-light-bg: #fff0f0;
+    --bg-card: #ffffff;
+    --bg-page: #f7f7f7;
+    --text-main: #333333;
+    --text-label: #555555;
+    --border-light: #eeeeee;
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --error-color: red;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
 .user-detail {
     max-width: 800px;
     margin: 40px auto;
@@ -5,22 +20,23 @@
 }
 
 .back-button {
-    background-color: #ffffff;
-    color: #f25a5a;
+    background-color: var(--bg-card);
+    color: var(--primary-color);
     padding: 8px 0;
     margin-bottom: 20px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     font-size: 15px;
     width: 110px;
     text-decoration: none;
+    display: inline-block;
 }
 
 .card {
-    background-color: #fff;
+    background-color: var(--bg-card);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
 }
 
 .user-image {
@@ -34,7 +50,7 @@
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #f25a5a;
+    color: var(--primary-color);
 }
 
 .user-info p,
@@ -46,7 +62,7 @@
 
 .label {
     font-weight: 600;
-    color: #555;
+    color: var(--text-label);
 }
 
 .section-title {
@@ -54,15 +70,15 @@
     font-weight: 600;
     margin-top: 20px;
     margin-bottom: 10px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid var(--border-light);
     padding-bottom: 4px;
 }
 
 .company-info,
 .bank-info {
-    background-color: #fff0f0;
+    background-color: var(--primary-light-bg);
     padding: 15px 20px;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
 }
 
 .status-message {
@@ -72,7 +88,7 @@
 }
 
 .status-message.error {
-    color: red;
+    color: var(--error-color);
 }
 
 @media (max-width: 480px) {
@@ -92,12 +108,13 @@
         margin-top: 10px;
     }
 
-    .user-info p, .company-info p, .bank-info p {
+    .user-info p,
+    .company-info p,
+    .bank-info p {
         font-size: 14px;
     }
 
     .user-detail {
-        margin: 20px auto
+        margin: 20px auto;
     }
-
 }

@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #f25a5a;
+  --text-main: #333;
+  --font-size-no-users: 20px;
+}
+
 .filters-block {
   display: flex;
   align-items: center;
@@ -14,18 +20,28 @@
 }
 
 .no-users {
-  font-size: 20px;
-  color: #f25a5a;
+  font-size: var(--font-size-no-users);
+  color: var(--primary-color);
   font-weight: bold;
   display: block;
   margin: 0 auto;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 760px) {
+  .filters {
+    justify-content: center;
+  }
+
   .filters-block {
     display: block;
   }
 
+  .search input[type='text'] {
+    width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
   .user-list {
     display: block;
     justify-content: center;

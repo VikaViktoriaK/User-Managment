@@ -1,49 +1,66 @@
+:root {
+    --primary-color: #f25a5a;
+    --primary-hover: rgb(255, 243, 243);
+    --bg-modal: #ffffff;
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+    --bg-secondary: #dddddd;
+    --bg-secondary-hover: #bbbbbb;
+    --shadow-modal: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radius-lg: 10px;
+    --spacing-md: 20px;
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-overlay);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: var(--bg-modal);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-modal);
     width: 300px;
 }
 
 .modal-buttons {
-    margin-top: 20px;
+    margin-top: var(--spacing-md);
     display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .modal-buttons button {
     padding: 10px 20px;
-    margin: 5px;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
 }
 
 .modal-buttons button:first-child {
-    background-color: #f25a5a;
+    background-color: var(--primary-color);
     color: white;
 }
 
 .modal-buttons button:first-child:hover {
-    background-color: #ff3b3b;
+    background-color: var(--primary-hover);
 }
 
 .modal-buttons button:last-child {
-    background-color: #ddd;
+    background-color: var(--bg-secondary);
+    color: #333;
 }
 
 .modal-buttons button:last-child:hover {
-    background-color: #bbb;
+    background-color: var(--bg-secondary-hover);
 }
