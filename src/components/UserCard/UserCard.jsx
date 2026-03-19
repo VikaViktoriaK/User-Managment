@@ -3,8 +3,6 @@ import './UserCard.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 const UserCard = ({ user }) => {
-  const navigate = useNavigate();
-
   const firstName = user?.firstName ?? 'No name';
   const lastName = user?.lastName ?? '';
   const image = user?.image ?? 'No photo';
