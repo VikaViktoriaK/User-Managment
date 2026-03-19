@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react';
 import Modal from '../Modal/Modal';
 import './Menu.css';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../store/authSlice';
 
 const Menu = () => {
   const [username, setUsername] = useState('');
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const userData = localStorage.getItem('user');
+    const userData = localStorage.getItem('currentUser');
     if (userData) {
       const parsedUser = JSON.parse(userData);
       setUsername(parsedUser.username);
@@ -17,6 +20,8 @@ const Menu = () => {
   }, []);
 
   const handleLogout = () => {
+    dispatch(logout());
+    setShowModal(false);
     navigate('/');
   };
 

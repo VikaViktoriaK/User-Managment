@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import { Container } from './components/Container/Container';
 import NotFoundPage from './pages/NotFound/NotFoundPage';
 import UserDetailPage from './pages/UserDetail/UserDetailPage';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 const App = () => {
   return (
@@ -12,8 +13,24 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          <Route path="/users" element={<UsersPage />} />
-          <Route path="/users/:id" element={<UserDetailPage />} />
+          <Route
+            path="/users"
+            element={
+              <ProtectedRoute>
+                {' '}
+                <UsersPage />{' '}
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/users/:id"
+            element={
+              <ProtectedRoute>
+                {' '}
+                <UserDetailPage />{' '}
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
