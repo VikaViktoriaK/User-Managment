@@ -1,34 +1,26 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchUserById } from '../../store/usersSlice';
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useGetUserByIdQuery } from '../../services/usersApi'; // Импортируем хук
 import './UserDetailPage.css';
 import Loader from '../../components/Loader/Loader';
 
 const UserDetailPage = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { selectedUser, selectedStatus, error } = useSelector((state) => state.users);
+  const { data: user, isLoading, isError } = useGetUserByIdQuery(id);
 
-  useEffect(() => {
-    dispatch(fetchUserById(id));
-  }, [dispatch, id]);
-
-  if (selectedStatus === 'loading') {
+  if (isLoading) {
     return <Loader />;
   }
 
-  if (selectedStatus === 'failed') {
+  if (isError) {
     return <p className="status-message error">Error loading user</p>;
   }
 
-  if (!selectedUser) {
+  if (!user) {
     return <p className="status-message">User not found</p>;
   }
-
-  const user = selectedUser;
 
   return (
     <div className="user-detail">
@@ -55,8 +47,8 @@ const UserDetailPage = () => {
             <span className="label">Phone:</span> {user.phone}
           </p>
           <p>
-            <span className="label">Address:</span> {user.address.address}, {user.address.city},{' '}
-            {user.address.country}
+            <span className="label">Address:</span> {user.address?.address}, {user.address?.city},{' '}
+            {user.address?.country}
           </p>
           <p>
             <span className="label">University:</span> {user.university}
@@ -66,24 +58,24 @@ const UserDetailPage = () => {
         <h3 className="section-title">Company</h3>
         <div className="company-info">
           <p>
-            <span className="label">Company:</span> {user.company.name}
+            <span className="label">Company:</span> {user.company?.name}
           </p>
           <p>
-            <span className="label">Position:</span> {user.company.title}
+            <span className="label">Position:</span> {user.company?.title}
           </p>
           <p>
-            <span className="label">Address:</span> {user.company.address.address},{' '}
-            {user.company.address.city}
+            <span className="label">Address:</span> {user.company?.address?.address},{' '}
+            {user.company?.address?.city}
           </p>
         </div>
 
         <h3 className="section-title">Bank</h3>
         <div className="bank-info">
           <p>
-            <span className="label">Card Type:</span> {user.bank.cardType}
+            <span className="label">Card Type:</span> {user.bank?.cardType}
           </p>
           <p>
-            <span className="label">Expire:</span> {user.bank.cardExpire}
+            <span className="label">Expire:</span> {user.bank?.cardExpire}
           </p>
         </div>
       </div>
