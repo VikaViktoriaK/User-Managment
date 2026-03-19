@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import UsersPage from './pages/UsersPage/UsersPage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import { Container } from './components/Container/Container';
 import NotFoundPage from './pages/NotFound/NotFoundPage';
 import UserDetailPage from './pages/UserDetail/UserDetailPage';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
