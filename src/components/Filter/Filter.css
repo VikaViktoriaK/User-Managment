@@ -1,3 +1,16 @@
+:root {
+    --primary-color: #f25a5a;
+    --primary-hover: rgb(255, 243, 243);
+    --bg-main: #ffffff;
+    --text-main: #333333;
+    --text-muted: #555555;
+    --border-light: #dddddd;
+    --font-size-label: 20px;
+    --font-size-input: 15px;
+    --radius-standard: 6px;
+    --transition-speed: 0.3s;
+}
+
 .filter-container {
     display: flex;
     align-items: center;
@@ -8,43 +21,43 @@
 }
 
 .filter-container label {
-    font-size: 20px;
+    font-size: var(--font-size-label);
     margin-right: 10px;
-    color: #333;
+    color: var(--text-main);
 }
 
 .filter-container select {
     padding: 10px 15px;
-    font-size: 15px;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    color: #555;
-    transition: border 0.3s ease;
+    font-size: var(--font-size-input);
+    border-radius: var(--radius-standard);
+    border: 1px solid var(--border-light);
+    background-color: var(--bg-main);
+    color: var(--text-muted);
+    transition: border var(--transition-speed) ease;
     width: 150px;
 }
 
 .filter-container select:focus {
-    border-color: #f25a5a;
+    border-color: var(--primary-color);
     outline: none;
 }
 
 .filter-container button {
     padding: 8px 16px;
-    background-color: #f25a5a;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--bg-main);
     border: none;
-    border-radius: 6px;
+    border-radius: var(--radius-standard);
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-speed);
     margin-left: 10px;
 }
 
 .filter-container select option {
     padding: 10px;
-    background-color: #ffffff;
-    color: #333;
+    background-color: var(--bg-main);
+    color: var(--text-main);
 }
 
 .filter-container input,
@@ -76,5 +89,3 @@
         justify-content: center;
     }
 }
-
-

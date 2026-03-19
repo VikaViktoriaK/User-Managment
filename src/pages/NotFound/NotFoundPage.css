@@ -1,41 +1,70 @@
+:root {
+    --primary-color: #f25a5a;
+    --bg-light: #f7f7f7;
+    --text-dark: #333333;
+    --text-white: #ffffff;
+    --font-title: 120px;
+    --font-subtitle: 24px;
+    --font-base: 16px;
+    --radius-md: 6px;
+    --transition-fast: 0.25s;
+}
+
 .notfound-container {
     min-height: 100vh;
-    background-color: #f7f7f7;
+    background-color: var(--bg-light);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #333;
+    color: var(--text-dark);
     text-align: center;
     font-family: Arial, sans-serif;
     padding: 20px;
 }
 
 .notfound-title {
-    font-size: 120px;
+    font-size: var(--font-title);
     font-weight: 700;
     margin: 0;
-    color: #f25a5a;
+    color: var(--primary-color);
 }
 
 .notfound-text {
-    font-size: 24px;
+    font-size: var(--font-subtitle);
     margin: 10px 0 30px;
 }
 
 .notfound-button {
+    /* Если это будет Link, добавляем свойства для корректного отображения */
+    display: inline-block;
+    text-decoration: none;
+
     padding: 12px 26px;
-    font-size: 16px;
-    border-radius: 6px;
-    border: 2px solid #f25a5a;
+    font-size: var(--font-base);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--primary-color);
     background: transparent;
-    color: #f25a5a;
+    color: var(--primary-color);
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all var(--transition-fast) ease;
     width: 50%;
+    max-width: 250px;
 }
 
 .notfound-button:hover {
-    background-color: #f25a5a;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+@media (max-width: 480px) {
+    .notfound-title {
+        font-size: 80px;
+    }
+    .notfound-text {
+        font-size: 18px;
+    }
+    .notfound-button {
+        width: 80%;
+    }
 }
