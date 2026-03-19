@@ -8,7 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/User-Managment">
       <div>
         <Routes>
           <Route path="/" element={<LoginPage />} />
